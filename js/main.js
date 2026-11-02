@@ -48,3 +48,6 @@
         }
     });
 })();
+
+import "./menu.js";
+import "./featured.js";

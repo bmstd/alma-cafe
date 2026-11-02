@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="icon" href="./assets/images/brand/favicon.ico" type="image/x-icon">
 </head>
-<body>
-    
 <!-- ==================== NAVBAR ==================== -->
 <header class="header">
     <nav class="navbar" aria-label="Navegación principal">
@@ -50,6 +48,7 @@
     </nav>
 </header>
 <!-- ==================== FIN NAVBAR ==================== -->
+
 <!-- ==================== HERO ==================== -->
 <section class="hero" id="inicio">
     <!-- Video de fondo -->
@@ -73,11 +72,11 @@
     ></div>
     <!-- Contenido principal -->
     <div class="hero__content">
-    <h1 class="hero__title">
-        Descubrí
-        <span class="hero__title-brand">Alma Café</span>,
-        tu lugar para disfrutar un buen café
-    </h1>
+        <h1 class="hero__title">
+            Descubrí
+            <span class="hero__title-brand">Alma Café</span>,
+            tu lugar para disfrutar un buen café
+        </h1>
         <h2 class="hero__subtitle">
             Sabores que hacen especial cada pausa.
         </h2>
@@ -96,6 +95,143 @@
 </section>
 <!-- ==================== FIN HERO ==================== -->
 
-<script src="./js/main.js"></script>
+<!-- ==================== NUESTRA CARTA ==================== -->
+<section class="menu" id="menu">
+    <!-- Encabezado de productos destacados -->
+    <header
+        class="menu__header menu__header--featured"
+        id="menu-destacados"
+    >
+        <span class="menu__eyebrow">
+            UNA SELECCIÓN ESPECIAL
+        </span>
+        <h2 class="menu__title">
+            Los favoritos de Alma
+        </h2>
+        <p class="menu__description">
+            Esos sabores que siempre dan ganas de volver a pedir.
+        </p>
+    </header>
+    <!-- Carrusel de productos destacados -->
+    <section
+        class="menu__featured"
+        aria-label="Productos favoritos de Alma Café"
+    >
+        <!-- Productos generados desde JavaScript -->
+        <div class="menu__featured-track"></div>
+        <!-- Controles del carrusel -->
+        <div class="menu__featured-controls">
+            <button
+                class="menu__featured-button menu__featured-button--previous"
+                type="button"
+                aria-label="Producto destacado anterior"
+            >
+                <span aria-hidden="true">&larr;</span>
+            </button>
+            <div
+                class="menu__featured-indicators"
+                aria-label="Posición del carrusel"
+            >
+                <!-- Indicadores generados desde JavaScript -->
+            </div>
+            <button
+                class="menu__featured-button menu__featured-button--next"
+                type="button"
+                aria-label="Producto destacado siguiente"
+            >
+                <span aria-hidden="true">&rarr;</span>
+            </button>
+        </div>
+    </section>
+    <!-- Encabezado de la carta completa -->
+    <header class="menu__header menu__header--catalog">
+        <span class="menu__eyebrow">
+            DESCUBRÍ TODA LA CARTA
+        </span>
+        <h2 class="menu__title">
+            Nuestra carta
+        </h2>
+        <p class="menu__description">
+            Descubrí sabores para acompañar cada momento.
+        </p>
+    </header>
+    <!-- Filtros por categoría -->
+    <nav
+        class="menu__categories"
+        aria-label="Filtrar productos por categoría"
+    >
+        <div class="menu__categories-list">
+            <!-- Categorías generadas desde JavaScript -->
+        </div>
+    </nav>
+    <!-- Listado de productos -->
+    <div class="menu__products">
+        <div
+            class="menu__products-grid"
+            aria-label="Productos de la carta"
+        >
+            <!-- Tarjetas generadas desde JavaScript -->
+        </div>
+        <!-- Mensaje para una categoría sin productos -->
+        <p class="menu__empty" hidden>
+            Por el momento no hay productos disponibles
+            en esta categoría.
+        </p>
+    </div>
+</section>
+<!-- ==================== FIN NUESTRA CARTA ==================== -->
+<!-- ==================== MODAL DE PRODUCTO ==================== -->
+
+<dialog
+    class="product-modal"
+    aria-labelledby="product-modal-title"
+>
+    <div class="product-modal__content">
+        <!-- Botón para cerrar la ventana -->
+        <button
+            class="product-modal__close"
+            type="button"
+            aria-label="Cerrar detalles del producto"
+        >
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- Imagen del producto -->
+        <div class="product-modal__media">
+            <img
+                class="product-modal__image"
+                src=""
+                alt=""
+            >
+        </div>
+        <!-- Información del producto -->
+        <div class="product-modal__details">
+            <h2
+                class="product-modal__title"
+                id="product-modal-title"
+            >
+                <!-- Nombre generado desde JavaScript -->
+            </h2>
+            <p class="product-modal__price">
+                <!-- Precio generado desde JavaScript -->
+            </p>
+            <p class="product-modal__description">
+                <!-- Descripción generada desde JavaScript -->
+            </p>
+            <!-- Ingredientes -->
+            <div class="product-modal__ingredients">
+                <h3 class="product-modal__ingredients-title">
+                    Ingredientes
+                </h3>
+                <ul class="product-modal__ingredients-list">
+                    <!-- Ingredientes generados desde JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</dialog>
+<!-- ==================== FIN MODAL DE PRODUCTO ==================== -->
+
+<script type="module" src="./js/main.js"></script>
+
 </body>
 </html>
