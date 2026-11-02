@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="./assets/brand/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    
+<!-- ==================== NAVBAR ==================== -->
+<header class="header">
+    <nav class="navbar" aria-label="Navegación principal">
+        <!-- Logo y nombre -->
+        <a class="navbar__brand" href="#inicio">
+            <img
+                class="navbar__logo"
+                src="./assets/brand/logo.png"
+                alt=""
+            >
+            <span class="navbar__name">
+                Alma Café
+            </span>
+        </a>
+        <!-- Botón hamburguesa -->
+        <button
+            class="navbar__toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="navbar-menu"
+        >
+            <span class="navbar__line"></span>
+            <span class="navbar__line"></span>
+            <span class="navbar__line"></span>
+        </button>
+        <!-- Menú desplegable -->
+        <div class="navbar__menu" id="navbar-menu" hidden>
+            <a class="navbar__link" href="#inicio">
+                Inicio
+            </a>
+            <a class="navbar__link" href="#menu">
+                Nuestra carta
+            </a>
+            <a class="navbar__link" href="#contacto">
+                Contacto
+            </a>
+        </div>
+    </nav>
+</header>
+<!-- ==================== FIN NAVBAR ==================== -->
+<script src="./js/main.js"></script>
+</body>
+</html>

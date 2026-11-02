@@ -1,0 +1,163 @@
+/* ==================== RESET ==================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==================== VARIABLES ==================== */
+
+:root {
+    /* Colores principales */
+    --color-primary: #6F4E37;
+    --color-primary-dark: #493021;
+    --color-primary-light: #A67C52;
+    /* Fondos */
+    --color-background: #FFFFFF;
+    --color-background-soft: #F7F1E8;
+    /* Textos */
+    --color-text: #30251F;
+    --color-text-muted: #806F62;
+    /* Bordes */
+    --color-border: #E9DED2;
+}
+
+/* ==================== NAVBAR ==================== */
+/* Contenedor principal */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Barra de navegación */
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    min-height: 76px;
+    padding: 12px 20px;
+}
+
+/* Logo y nombre */
+.navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+.navbar__logo {
+    display: block;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.navbar__name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-primary-dark);
+}
+
+/* Botón hamburguesa */
+.navbar__toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.navbar__line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--color-primary-dark);
+    border-radius: 2px;
+}
+
+/* Menú desplegable */
+.navbar__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    padding: 12px 20px 20px;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 12px 20px rgb(48 37 31 / 8%);
+    align-items: center;
+}
+
+/* Ocultar el menú cuando tiene el atributo hidden */
+.navbar__menu[hidden] {
+    display: none;
+}
+
+/* Animación hamburguesa a X */
+.navbar__line {
+    transition:
+        transform 0.25s ease,
+        opacity 0.2s ease;
+}
+
+.navbar__toggle.is-active .navbar__line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle.is-active .navbar__line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__toggle.is-active .navbar__line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Enlaces */
+.navbar__link {
+    display: block;
+    padding: 14px 12px;
+    color: var(--color-text);
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* Estados interactivos */
+.navbar__link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-background-soft);
+}
+
+/* Accesibilidad */
+.navbar__toggle:focus-visible,
+.navbar__link:focus-visible,
+.navbar__brand:focus-visible {
+    outline: 2px solid var(--color-primary-light);
+    outline-offset: 3px;
+}
