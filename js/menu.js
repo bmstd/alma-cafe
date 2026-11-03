@@ -24,13 +24,15 @@ import { productos } from "./products.js";
         return;
     }
 
+    /* ==================== CATEGORÍAS ==================== */
+
     const categorias = [
-        "Cafetería",
-        "Bebidas frías",
-        "Otras bebidas",
-        "Pastelería",
-        "Salados",
-        "Tortas y postres"
+        { id: "cafeteria", nombre: "Cafetería" },
+        { id: "bebidas-frias", nombre: "Bebidas frías" },
+        { id: "otras-bebidas", nombre: "Otras bebidas" },
+        { id: "pasteleria", nombre: "Pastelería" },
+        { id: "salados", nombre: "Salados" },
+        { id: "tortas-postres", nombre: "Tortas y postres" }
     ];
 
     const productosActivos = productos.filter(
@@ -41,39 +43,40 @@ import { productos } from "./products.js";
         (categoria) =>
             productosActivos.some(
                 (producto) =>
-                    producto.categorias.includes(categoria)
+                    producto.categorias.includes(categoria.id)
             )
     );
 
-    let categoriaSeleccionada = "Todo";
+    let categoriaSeleccionada = "todo";
 
-    /* ==================== CATEGORÍAS ==================== */
+    /* ==================== RENDERIZAR CATEGORÍAS ==================== */
 
     const renderizarCategorias = () => {
         const botones = [
-            "Todo",
+            { id: "todo", nombre: "Todo" },
             ...categoriasDisponibles
         ];
 
         categoriasContainer.innerHTML = botones.map(
             (categoria) => {
-                const activa = categoria === categoriaSeleccionada;
+                const activa =
+                    categoria.id === categoriaSeleccionada;
 
                 return `
                     <button
                         class="menu__category-button${activa ? " is-active" : ""}"
                         type="button"
-                        data-category="${categoria}"
+                        data-category="${categoria.id}"
                         aria-pressed="${activa}"
                     >
-                        ${categoria}
+                        ${categoria.nombre}
                     </button>
                 `;
             }
         ).join("");
     };
 
-    /* ==================== PRODUCTOS ==================== */
+    /* ==================== RENDERIZAR PRODUCTOS ==================== */
 
     const renderizarProductos = () => {
         productosContainer.innerHTML = productosActivos.map(
@@ -81,6 +84,8 @@ import { productos } from "./products.js";
                 <article
                     class="menu__product-card"
                     tabindex="0"
+                    role="button"
+                    aria-label="Ver detalles de ${producto.nombre}"
                     data-product-id="${producto.id}"
                     data-categories="${producto.categorias.join(",")}"
                 >
@@ -117,7 +122,7 @@ import { productos } from "./products.js";
                     tarjeta.dataset.categories.split(",");
 
                 const mostrar =
-                    categoriaSeleccionada === "Todo" ||
+                    categoriaSeleccionada === "todo" ||
                     categoriasProducto.includes(categoriaSeleccionada);
 
                 tarjeta.classList.toggle("is-hidden", !mostrar);
@@ -130,7 +135,7 @@ import { productos } from "./products.js";
         mensajeVacio.hidden = productosVisibles > 0;
     };
 
-    /* ==================== EVENTOS ==================== */
+    /* ==================== EVENTOS DE CATEGORÍAS ==================== */
 
     categoriasContainer.addEventListener("click", (event) => {
         const boton = event.target.closest("[data-category]");
@@ -143,6 +148,65 @@ import { productos } from "./products.js";
 
         renderizarCategorias();
         filtrarProductos();
+    });
+
+    /* ==================== EVENTOS DE PRODUCTOS ==================== */
+
+    const activarProducto = (tarjeta) => {
+        if (!tarjeta || tarjeta.classList.contains("is-hidden")) {
+            return;
+        }
+
+        const productoId = Number(tarjeta.dataset.productId);
+
+        const producto = productosActivos.find(
+            (item) => item.id === productoId
+        );
+
+        if (!producto) {
+            return;
+        }
+
+        // La apertura del modal se conectará en product-modal.js.
+        // Por ahora, el producto seleccionado queda identificado.
+        productosContainer.dispatchEvent(
+            new CustomEvent("product-select", {
+                bubbles: true,
+                detail: { producto }
+            })
+        );
+    };
+
+    productosContainer.addEventListener("click", (event) => {
+        const tarjeta = event.target.closest(
+            ".menu__product-card"
+        );
+
+        if (!tarjeta || !productosContainer.contains(tarjeta)) {
+            return;
+        }
+
+        activarProducto(tarjeta);
+    });
+
+    productosContainer.addEventListener("keydown", (event) => {
+        if (
+            event.key !== "Enter" &&
+            event.key !== " "
+        ) {
+            return;
+        }
+
+        const tarjeta = event.target.closest(
+            ".menu__product-card"
+        );
+
+        if (!tarjeta || !productosContainer.contains(tarjeta)) {
+            return;
+        }
+
+        event.preventDefault();
+        activarProducto(tarjeta);
     });
 
     /* ==================== INICIALIZACIÓN ==================== */

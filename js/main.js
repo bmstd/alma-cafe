@@ -51,3 +51,4 @@
 
 import "./menu.js";
 import "./featured.js";
+import "./product-modal.js";

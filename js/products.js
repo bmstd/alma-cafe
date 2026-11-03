@@ -12,7 +12,7 @@ export const productos = [
         imagen: "./assets/images/espresso.jpg",
         descripcion: "Un café intenso para disfrutar en cualquier momento.",
         ingredientes: ["Café"],
-        categorias: ["Cafetería"],
+        categorias: ["cafeteria"],
         destacado: true,
         activo: true
     },
@@ -23,7 +23,7 @@ export const productos = [
         imagen: "./assets/images/cappuccino.jpg",
         descripcion: "Café espresso con leche vaporizada y espuma cremosa.",
         ingredientes: ["Café", "Leche"],
-        categorias: ["Cafetería"],
+        categorias: ["cafeteria"],
         destacado: true,
         activo: true
     },
@@ -34,7 +34,7 @@ export const productos = [
         imagen: "./assets/images/limonada.jpg",
         descripcion: "Una bebida fresca y cítrica.",
         ingredientes: ["Limón", "Agua", "Azúcar"],
-        categorias: ["Bebidas frías"],
+        categorias: ["bebidas-frias"],
         destacado: false,
         activo: true
     },
@@ -45,7 +45,7 @@ export const productos = [
         imagen: "./assets/images/medialunas.jpg",
         descripcion: "Medialunas ideales para acompañar tu café.",
         ingredientes: ["Harina", "Manteca", "Azúcar"],
-        categorias: ["Pastelería"],
+        categorias: ["pasteleria"],
         destacado: true,
         activo: true
     },
@@ -56,7 +56,7 @@ export const productos = [
         imagen: "./assets/images/tostado.jpg",
         descripcion: "Un clásico tostado, dorado y crocante.",
         ingredientes: ["Pan", "Jamón", "Queso"],
-        categorias: ["Salados"],
+        categorias: ["salados"],
         destacado: false,
         activo: true
     },
@@ -67,7 +67,7 @@ export const productos = [
         imagen: "./assets/images/cheesecake.jpg",
         descripcion: "Una porción cremosa y dulce para disfrutar.",
         ingredientes: ["Queso crema", "Azúcar", "Galletas"],
-        categorias: ["Tortas y postres"],
+        categorias: ["tortas-postres"],
         destacado: false,
         activo: true
     },
@@ -78,7 +78,7 @@ export const productos = [
         imagen: "./assets/images/te.jpg",
         descripcion: "Una infusión suave para hacer una pausa.",
         ingredientes: ["Té", "Agua"],
-        categorias: ["Otras bebidas"],
+        categorias: ["otras-bebidas"],
         destacado: false,
         activo: true
     }
