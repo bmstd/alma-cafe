@@ -7,304 +7,323 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="icon" href="./assets/images/brand/favicon.ico" type="image/x-icon">
 </head>
-<!-- ==================== NAVBAR ==================== -->
-<header class="header">
-    <nav class="navbar" aria-label="Navegación principal">
-        <!-- Logo y nombre -->
-        <a class="navbar__brand" href="#inicio">
-            <img
-                class="navbar__logo"
-                src="./assets/images/brand/logo.png"
-                alt=""
-            >
-            <span class="navbar__name">
-                Alma Café
-            </span>
-        </a>
-        <!-- Botón hamburguesa -->
-        <button
-            class="navbar__toggle"
-            type="button"
-            aria-label="Abrir menú"
-            aria-expanded="false"
-            aria-controls="navbar-menu"
-        >
-            <span class="navbar__line"></span>
-            <span class="navbar__line"></span>
-            <span class="navbar__line"></span>
-        </button>
-        <!-- Menú desplegable -->
-        <div class="navbar__menu" id="navbar-menu" hidden>
-            <a class="navbar__link" href="#inicio">
-                Inicio
-            </a>
-            <a class="navbar__link" href="#menu">
-                Nuestra carta
-            </a>
-            <a class="navbar__link" href="#contacto">
-                Contacto
-            </a>
-        </div>
-    </nav>
-</header>
-<!-- ==================== FIN NAVBAR ==================== -->
-
-<!-- ==================== HERO ==================== -->
-<section class="hero" id="inicio">
-    <!-- Video de fondo -->
-    <video
-        class="hero__video"
-        autoplay
-        muted
-        loop
-        playsinline
-        aria-hidden="true"
-    >
-        <source
-            src="./assets/videos/hero.mp4"
-            type="video/mp4"
-        >
-    </video>
-    <!-- Capa de contraste -->
-    <div
-        class="hero__overlay"
-        aria-hidden="true"
-    ></div>
-    <!-- Contenido principal -->
-    <div class="hero__content">
-        <h1 class="hero__title">
-            Descubrí
-            <span class="hero__title-brand">Alma Café</span>,
-            tu lugar para disfrutar un buen café
-        </h1>
-        <h2 class="hero__subtitle">
-            Sabores que hacen especial cada pausa.
-        </h2>
-    </div>
-    <!-- CTA inferior -->
-    <a
-        class="hero__cta"
-        href="#menu"
-    >
-        <span>Explorá nuestra carta</span>
-        <span
-            class="hero__cta-arrow"
-            aria-hidden="true"
-        >↓</span>
-    </a>
-</section>
-<!-- ==================== FIN HERO ==================== -->
-
-<!-- ==================== NUESTRA CARTA ==================== -->
-<section class="menu" id="menu">
-    <!-- Encabezado de productos destacados -->
-    <header
-        class="menu__header menu__header--featured"
-        id="menu-destacados"
-    >
-        <span class="menu__eyebrow">
-            UNA SELECCIÓN ESPECIAL
-        </span>
-        <h2 class="menu__title">
-            Los favoritos de Alma
-        </h2>
-        <p class="menu__description">
-            Esos sabores que siempre dan ganas de volver a pedir.
-        </p>
-    </header>
-    <!-- Carrusel de productos destacados -->
-    <section
-        class="menu__featured"
-        aria-label="Productos favoritos de Alma Café"
-    >
-        <!-- Productos generados desde JavaScript -->
-        <div class="menu__featured-track"></div>
-        <!-- Controles del carrusel -->
-        <div class="menu__featured-controls">
-            <button
-                class="menu__featured-button menu__featured-button--previous"
-                type="button"
-                aria-label="Producto destacado anterior"
-            >
-                <span aria-hidden="true">&larr;</span>
-            </button>
-            <div
-                class="menu__featured-indicators"
-                aria-label="Posición del carrusel"
-            >
-                <!-- Indicadores generados desde JavaScript -->
-            </div>
-            <button
-                class="menu__featured-button menu__featured-button--next"
-                type="button"
-                aria-label="Producto destacado siguiente"
-            >
-                <span aria-hidden="true">&rarr;</span>
-            </button>
-        </div>
-    </section>
-    <!-- Encabezado de la carta completa -->
-    <header class="menu__header menu__header--catalog">
-        <span class="menu__eyebrow">
-            DESCUBRÍ TODA LA CARTA
-        </span>
-        <h2 class="menu__title">
-            Nuestra carta
-        </h2>
-        <p class="menu__description">
-            Descubrí sabores para acompañar cada momento.
-        </p>
-    </header>
-    <!-- Filtros por categoría -->
-    <nav
-        class="menu__categories"
-        aria-label="Filtrar productos por categoría"
-    >
-        <div class="menu__categories-list">
-            <!-- Categorías generadas desde JavaScript -->
-        </div>
-    </nav>
-    <!-- Listado de productos -->
-    <div class="menu__products">
-        <div
-            class="menu__products-grid"
-            aria-label="Productos de la carta"
-        >
-            <!-- Tarjetas generadas desde JavaScript -->
-        </div>
-        <!-- Mensaje para una categoría sin productos -->
-        <p class="menu__empty" hidden>
-            Por el momento no hay productos disponibles
-            en esta categoría.
-        </p>
-    </div>
-</section>
-<!-- ==================== FIN NUESTRA CARTA ==================== -->
-<!-- ==================== MODAL DE PRODUCTO ==================== -->
-
-<dialog
-    class="product-modal"
-    aria-labelledby="product-modal-title"
->
-    <div class="product-modal__content">
-        <!-- Botón para cerrar la ventana -->
-        <button
-            class="product-modal__close"
-            type="button"
-            aria-label="Cerrar detalles del producto"
-        >
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <!-- Imagen del producto -->
-        <div class="product-modal__media">
-            <img
-                class="product-modal__image"
-                src=""
-                alt=""
-            >
-        </div>
-        <!-- Información del producto -->
-        <div class="product-modal__details">
-            <h2
-                class="product-modal__title"
-                id="product-modal-title"
-            >
-                <!-- Nombre generado desde JavaScript -->
-            </h2>
-            <p class="product-modal__price">
-                <!-- Precio generado desde JavaScript -->
-            </p>
-            <p class="product-modal__description">
-                <!-- Descripción generada desde JavaScript -->
-            </p>
-            <!-- Ingredientes -->
-            <div class="product-modal__ingredients">
-                <h3 class="product-modal__ingredients-title">
-                    Ingredientes
-                </h3>
-                <ul class="product-modal__ingredients-list">
-                    <!-- Ingredientes generados desde JavaScript -->
-                </ul>
-            </div>
-        </div>
-    </div>
-</dialog>
-<!-- ==================== FIN MODAL DE PRODUCTO ==================== -->
-
-<!-- ==================== CONTACTO ==================== -->
-
-<section class="contact" id="contacto">
-    <div class="contact__container">
-
-        <header class="contact__header">
-            <span class="contact__eyebrow">ESTAMOS EN CONTACTO</span>
-
-            <h2 class="contact__title">
-                Un café y una charla
-            </h2>
-
-            <p class="contact__description">
-                ¿Tenés alguna consulta? Estamos para ayudarte.
-            </p>
+<body>
+    <main>
+        <!-- ==================== NAVBAR ==================== -->
+        <header class="header">
+            <nav class="navbar" aria-label="Navegación principal">
+                <!-- Logo y nombre -->
+                <a class="navbar__brand" href="#inicio">
+                    <img
+                        class="navbar__logo"
+                        src="./assets/images/brand/logo.png"
+                        alt=""
+                    >
+                    <span class="navbar__name">
+                        Alma Café
+                    </span>
+                </a>
+                <!-- Botón hamburguesa -->
+                <button
+                    class="navbar__toggle"
+                    type="button"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="navbar-menu"
+                >
+                    <span class="navbar__line"></span>
+                    <span class="navbar__line"></span>
+                    <span class="navbar__line"></span>
+                </button>
+                <!-- Menú desplegable -->
+                <div class="navbar__menu" id="navbar-menu" hidden>
+                    <a class="navbar__link" href="#inicio">
+                        Inicio
+                    </a>
+                    <a class="navbar__link" href="#menu">
+                        Nuestra carta
+                    </a>
+                    <a class="navbar__link" href="#contacto">
+                        Contacto
+                    </a>
+                </div>
+            </nav>
         </header>
+        <!-- ==================== FIN NAVBAR ==================== -->
 
-        <div class="contact__cards">
-
-            <!-- Instagram -->
-            <a
-                class="contact__card"
-                href="https://www.instagram.com/bm_studio.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visitar Instagram de BM Studio"
+        <!-- ==================== HERO ==================== -->
+        <section class="hero" id="inicio">
+            <!-- Video de fondo -->
+            <video
+                class="hero__video"
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-hidden="true"
             >
-                <img
-                    class="contact__icon"
-                    src="./assets/images/icons/instagram.svg"
-                    alt=""
-                    aria-hidden="true"
+                <source
+                    src="./assets/videos/hero.mp4"
+                    type="video/mp4"
                 >
-
-                <h3 class="contact__card-title">
-                    Instagram
-                </h3>
-
-                <p class="contact__card-description">
-                    Seguinos y descubrí más.
-                </p>
-
-            </a>
-
-            <!-- WhatsApp -->
+            </video>
+            <!-- Capa de contraste -->
+            <div
+                class="hero__overlay"
+                aria-hidden="true"
+            ></div>
+            <!-- Contenido principal -->
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Descubrí
+                    <span class="hero__title-brand">Alma Café</span>,
+                    tu lugar para disfrutar un buen café
+                </h1>
+                <h2 class="hero__subtitle">
+                    Sabores que hacen especial cada pausa.
+                </h2>
+            </div>
+            <!-- CTA inferior -->
             <a
-                class="contact__card"
-                href="https://wa.me/54938152223556?text=Hola%2C%20quer%C3%ADa%20hacer%20una%20consulta."
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contactar a BM Studio por WhatsApp"
+                class="hero__cta"
+                href="#menu"
             >
-                <img
-                    class="contact__icon"
-                    src="./assets/images/icons/whatsapp.svg"
-                    alt=""
+                <span>Explorá nuestra carta</span>
+                <span
+                    class="hero__cta-arrow"
                     aria-hidden="true"
-                >
-
-                <h3 class="contact__card-title">
-                    WhatsApp
-                </h3>
-
-                <p class="contact__card-description">
-                    Escribinos directamente.
-                </p>
+                >↓</span>
             </a>
+        </section>
+        <!-- ==================== FIN HERO ==================== -->
 
+        <!-- ==================== NUESTRA CARTA ==================== -->
+        <section class="menu" id="menu">
+            <!-- Encabezado de productos destacados -->
+            <header
+                class="menu__header menu__header--featured"
+                id="menu-destacados"
+            >
+                <span class="menu__eyebrow">
+                    UNA SELECCIÓN ESPECIAL
+                </span>
+                <h2 class="menu__title">
+                    Los favoritos de Alma
+                </h2>
+                <p class="menu__description">
+                    Esos sabores que siempre dan ganas de volver a pedir.
+                </p>
+            </header>
+            <!-- Carrusel de productos destacados -->
+            <section
+                class="menu__featured"
+                aria-label="Productos favoritos de Alma Café"
+            >
+                <!-- Productos generados desde JavaScript -->
+                <div class="menu__featured-track"></div>
+                <!-- Controles del carrusel -->
+                <div class="menu__featured-controls">
+                    <button
+                        class="menu__featured-button menu__featured-button--previous"
+                        type="button"
+                        aria-label="Producto destacado anterior"
+                    >
+                        <span aria-hidden="true">&larr;</span>
+                    </button>
+                    <div
+                        class="menu__featured-indicators"
+                        aria-label="Posición del carrusel"
+                    >
+                        <!-- Indicadores generados desde JavaScript -->
+                    </div>
+                    <button
+                        class="menu__featured-button menu__featured-button--next"
+                        type="button"
+                        aria-label="Producto destacado siguiente"
+                    >
+                        <span aria-hidden="true">&rarr;</span>
+                    </button>
+                </div>
+            </section>
+            <!-- Encabezado de la carta completa -->
+            <header class="menu__header menu__header--catalog">
+                <span class="menu__eyebrow">
+                    DESCUBRÍ TODA LA CARTA
+                </span>
+                <h2 class="menu__title">
+                    Nuestra carta
+                </h2>
+                <p class="menu__description">
+                    Descubrí sabores para acompañar cada momento.
+                </p>
+            </header>
+            <!-- Filtros por categoría -->
+            <nav
+                class="menu__categories"
+                aria-label="Filtrar productos por categoría"
+            >
+                <div class="menu__categories-list">
+                    <!-- Categorías generadas desde JavaScript -->
+                </div>
+            </nav>
+            <!-- Listado de productos -->
+            <div class="menu__products">
+                <div
+                    class="menu__products-grid"
+                    aria-label="Productos de la carta"
+                >
+                    <!-- Tarjetas generadas desde JavaScript -->
+                </div>
+                <!-- Mensaje para una categoría sin productos -->
+                <p class="menu__empty" hidden>
+                    Por el momento no hay productos disponibles
+                    en esta categoría.
+                </p>
+            </div>
+        </section>
+        <!-- ==================== FIN NUESTRA CARTA ==================== -->
+        <!-- ==================== MODAL DE PRODUCTO ==================== -->
+
+        <dialog
+            class="product-modal"
+            aria-labelledby="product-modal-title"
+        >
+            <div class="product-modal__content">
+                <!-- Botón para cerrar la ventana -->
+                <button
+                    class="product-modal__close"
+                    type="button"
+                    aria-label="Cerrar detalles del producto"
+                >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!-- Imagen del producto -->
+                <div class="product-modal__media">
+                    <img
+                        class="product-modal__image"
+                        src=""
+                        alt=""
+                    >
+                </div>
+                <!-- Información del producto -->
+                <div class="product-modal__details">
+                    <h2
+                        class="product-modal__title"
+                        id="product-modal-title"
+                    >
+                        <!-- Nombre generado desde JavaScript -->
+                    </h2>
+                    <p class="product-modal__price">
+                        <!-- Precio generado desde JavaScript -->
+                    </p>
+                    <p class="product-modal__description">
+                        <!-- Descripción generada desde JavaScript -->
+                    </p>
+                    <!-- Ingredientes -->
+                    <div class="product-modal__ingredients">
+                        <h3 class="product-modal__ingredients-title">
+                            Ingredientes
+                        </h3>
+                        <ul class="product-modal__ingredients-list">
+                            <!-- Ingredientes generados desde JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <!-- ==================== FIN MODAL DE PRODUCTO ==================== -->
+
+        <!-- ==================== CONTACTO ==================== -->
+        <section class="contact" id="contacto">
+            <div class="contact__container">
+                <header class="contact__header">
+                    <span class="contact__eyebrow">ESTAMOS EN CONTACTO</span>
+                    <h2 class="contact__title">
+                        Un café y una charla
+                    </h2>
+                    <p class="contact__description">
+                        ¿Tenés alguna consulta? Estamos para ayudarte.
+                    </p>
+                </header>
+                <div class="contact__cards">
+                    <!-- Instagram -->
+                    <a
+                        class="contact__card"
+                        href="https://www.instagram.com/bm_studio.dev/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visitar Instagram de BM Studio"
+                    >
+                        <img
+                            class="contact__icon"
+                            src="./assets/images/icons/instagram.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                        <h3 class="contact__card-title">
+                            Instagram
+                        </h3>
+                        <p class="contact__card-description">
+                            Seguinos y descubrí más.
+                        </p>
+                    </a>
+                    <!-- WhatsApp -->
+                    <a
+                        class="contact__card"
+                        href="https://wa.me/54938152223556?text=Hola%2C%20quer%C3%ADa%20hacer%20una%20consulta."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Contactar a BM Studio por WhatsApp"
+                    >
+                        <img
+                            class="contact__icon"
+                            src="./assets/images/icons/whatsapp.svg"
+                            alt=""
+                            aria-hidden="true"
+                        >
+                        <h3 class="contact__card-title">
+                            WhatsApp
+                        </h3>
+                        <p class="contact__card-description">
+                            Escribinos directamente.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ==================== FIN CONTACTO ==================== -->
+    </main>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <a class="footer__name" href="#inicio">
+                    Alma Café
+                </a>
+                <p class="footer__tagline">
+                    Un momento para disfrutar.
+                </p>
+            </div>
+            <nav class="footer__nav" aria-label="Navegación del pie de página">
+                <a href="#inicio">Inicio</a>
+                <a href="#menu">Menú</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <div class="footer__bottom">
+                <p class="footer__credit">
+                    Diseñado por
+                    <a
+                        href="https://www.instagram.com/bm_studio.dev/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        BM Studio
+                    </a>
+                </p>
+            </div>
         </div>
-    </div>
-</section>
-
-<!-- ==================== FIN CONTACTO ==================== -->
-
+    </footer>
+    <!-- ==================== FIN FOOTER ==================== -->
 <script type="module" src="./js/main.js"></script>
 </body>
 </html>
