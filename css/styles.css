@@ -124,6 +124,11 @@ html {
     display: none;
 }
 
+/* Ocultar el botón hamburguesa cuando tiene el atributo hidden */
+.navbar__toggle[hidden] {
+    display: none;
+}
+
 /* Animación hamburguesa a X */
 .navbar__line {
     transition:
@@ -165,6 +170,93 @@ html {
 .navbar__brand:focus-visible {
     outline: 2px solid var(--color-primary-light);
     outline-offset: 3px;
+}
+
+/* ==================== NAVBAR - TABLET ==================== */
+
+@media (min-width: 768px) {
+
+    .navbar {
+        min-height: 80px;
+        padding: 12px 32px;
+    }
+
+    .navbar__logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .navbar__name {
+        font-size: 18px;
+    }
+
+    .navbar__toggle {
+        width: 46px;
+        height: 46px;
+    }
+
+    .navbar__menu {
+        padding: 16px 32px 24px;
+    }
+
+    .navbar__link {
+        padding: 16px;
+        font-size: 17px;
+    }
+
+}
+
+/* ==================== NAVBAR - DESKTOP ==================== */
+
+@media (min-width: 1024px) {
+
+    .navbar {
+        min-height: 84px;
+        padding: 12px 40px;
+    }
+
+    .navbar__logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .navbar__name {
+        font-size: 19px;
+    }
+
+    /* Ocultar botón hamburguesa */
+    .navbar__toggle {
+        display: none;
+    }
+
+    /* Menú horizontal centrado */
+    .navbar__menu {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        width: auto;
+        padding: 0;
+
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+
+        transform: translate(-50%, -50%);
+    }
+
+    /* Enlaces */
+    .navbar__link {
+        padding: 12px;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
 }
 
 /* ==================== HERO ==================== */
