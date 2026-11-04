@@ -1404,6 +1404,58 @@ html {
     outline-offset: 4px;
 }
 
+
+/* ==================== CONTACTO - TABLET ==================== */
+@media (min-width: 768px) {
+    /* Encabezado */
+    .contact__eyebrow {
+        font-size: 0.85rem;
+    }
+
+    .contact__title {
+        font-size: 3.1rem;
+    }
+
+    .contact__description {
+        font-size: 1.05rem;
+    }
+
+    /* Tarjetas */
+    .contact__card-title {
+        font-size: 1.35rem;
+    }
+
+    .contact__card-description {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* ==================== CONTACTO - DESKTOP ==================== */
+@media (min-width: 1024px) {
+    .contact__eyebrow {
+        font-size: 0.9rem;
+    }
+
+    .contact__title {
+        font-size: 3.3rem;
+    }
+
+    .contact__description {
+        font-size: 1.1rem;
+    }
+
+    .contact__card-title {
+        font-size: 1.4rem;
+    }
+
+    .contact__card-description {
+        font-size: 1.05rem;
+    }
+}
+
+
 /* ==================== FIN CONTACTO ==================== */
 
 
@@ -1505,6 +1557,44 @@ html {
 .footer__credit a:focus-visible {
     outline: 2px solid var(--color-background-soft);
     outline-offset: 4px;
+}
+
+/* ==================== FOOTER - TABLET ==================== */
+@media (min-width: 768px) {
+    .footer__name {
+        font-size: 1.6rem;
+    }
+
+    .footer__tagline {
+        font-size: 0.95rem;
+    }
+
+    .footer__nav a {
+        font-size: 0.95rem;
+    }
+
+    .footer__credit {
+        font-size: 0.85rem;
+    }
+}
+
+/* ==================== FOOTER - DESKTOP ==================== */
+@media (min-width: 1024px) {
+    .footer__name {
+        font-size: 1.7rem;
+    }
+
+    .footer__tagline {
+        font-size: 1rem;
+    }
+
+    .footer__nav a {
+        font-size: 1rem;
+    }
+
+    .footer__credit {
+        font-size: 0.9rem;
+    }
 }
 
 /* ==================== FIN FOOTER ==================== */
