@@ -89,12 +89,12 @@ import { productos } from "./products.js";
                     data-product-id="${producto.id}"
                     data-categories="${producto.categorias.join(",")}"
                 >
-                    <img
-                        class="menu__product-image"
-                        src="${producto.imagen}"
-                        alt="${producto.nombre}"
-                        loading="lazy"
-                    >
+                <img
+                    class="menu__product-image"
+                    src="${producto.imagen}"
+                    alt="${producto.nombre}"
+                    loading="lazy"
+                >
 
                     <div class="menu__product-info">
                         <h3 class="menu__product-name">
